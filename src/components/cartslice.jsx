@@ -13,7 +13,7 @@ export const cartSlice = createSlice({
 
 
     reducers: {
-       addtocart: (state, action) => {
+       addItem: (state, action) => {
     const plant = state.cart.find(
         item => item.name === action.payload.name
     );
@@ -37,29 +37,26 @@ export const cartSlice = createSlice({
 
             //but the issue is when in product component when new added the product to the cart instead adding new plant still the quantity increases of existing plant 
        
-minusq: (state, action) => {
-    const plant = state.cart.find(
-        item => item.name === action.payload.name
-    );
+updateQuantity: (state, action) => {
+    const { name, type } = action.payload;
+
+    const plant = state.cart.find(item => item.name === name);
 
     if (!plant) return;
 
-    if (plant.qty > 1) {
-        plant.qty -= 1;
-    } else {
-        // Remove item completely
-        state.cart = state.cart.filter(
-            item => item.name !== action.payload.name
-        );
+    if (type === "increment") {
+        plant.qty += 1;
+    }
+
+    if (type === "decrement") {
+        if (plant.qty > 1) {
+            plant.qty -= 1;
+        } else {
+            state.cart = state.cart.filter(item => item.name !== name);
+        }
     }
 },
-        addq: (state, action) => {
-            const plant = state.cart.find(item => item.name === action.payload.name);
-            if (plant) {
-                plant.qty += 1;
-            }
-        },
-      remove: (state, action) => {
+      removeItem: (state, action) => {
     const plant = state.cart.find(item => item.name === action.payload.name);
 
     if (plant) {
@@ -75,5 +72,5 @@ minusq: (state, action) => {
 
     }
 });
-export const { addtocart, minusq, addq, remove } = cartSlice.actions;
+export const { addItem, removeItem, updateQuantity } = cartSlice.actions;
 export default cartSlice.reducer;

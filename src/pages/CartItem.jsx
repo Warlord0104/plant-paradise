@@ -1,11 +1,11 @@
-import plants from "../components/data/plants";
-import store from "../components/store/store";
+import plants from "../components/data/plants.js";
+import store from "../components/store/store.js";
 import { useSelector , useDispatch} from "react-redux";
-import {addq,minusq,remove} from '../components/cartslice.jsx';
+import {addItem, removeItem, updateQuantity } from '../components/cartslice.jsx';
 import { Link } from "react-router-dom";
 
 
-function Cart() {
+function CartItem() {
   
    const cart = useSelector ((state)=>state.cart.cart)
     const dispatch = useDispatch();
@@ -47,15 +47,15 @@ function Cart() {
         
         <h3>{plants.name}</h3>
         <span style={{ marginLeft: '10px' , display:'inline-flex', alignItems:'center' }}>
-           <button onClick={() => dispatch(minusq(plants))}>-</button>
+           <button onClick={() => dispatch(updateQuantity({ name: plants.name, type: "decrement" }))}>-</button>
         <p>Quantity: {plants.qty}</p>
-        <button onClick={() => dispatch(addq(plants))}>+</button>
+        <button onClick={() => dispatch(updateQuantity({ name: plants.name, type: "increment" }))}>+</button>
 
         </span>
        
         
         <p>Price: ₹{plants.cost }</p>
-         <button onClick={() => dispatch(remove(plants))}>Remove from Cart</button>
+         <button onClick={() => dispatch(removeItem({ name: plants.name }))}>Remove from Cart</button>
       </div>
     
     );
@@ -75,4 +75,4 @@ function Cart() {
   );
 }
 
-export default Cart;
+export default CartItem;

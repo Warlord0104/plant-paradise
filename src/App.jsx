@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Header from "./components/Header";
 import Landing from "./components/Landing";
-import Products from "./pages/products";
-import Cart from "./pages/cart";
+import ProductList from "./pages/ProductList";
+import CartItem from "./pages/CartItem";
 
 
 function App() {
@@ -34,8 +34,8 @@ function App() {
       <Header cartCount={cartCount} />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/products" element={<Products addToCart={addToCart} />} />
-        <Route path="/cart" element={<Cart cart={cart} updateQty={updateQty} removeItem={removeItem} />} />
+        <Route path="/products" element={<ProductList addToCart={addToCart} />} />
+        <Route path="/cart" element={<CartItem cart={cart} updateQty={updateQty} removeItem={removeItem} />} />
       </Routes>
     </BrowserRouter>
   );

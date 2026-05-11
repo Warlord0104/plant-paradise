@@ -2,7 +2,7 @@ import React, { useState, useEffect, use } from 'react';
 import './porducts.css';
 import {useDispatch,useSelector } from 'react-redux';
 import plants from '../components/data/plants.js';
-import {addtocart} from '../components/cartslice.jsx';
+import {addItem} from '../components/cartslice.jsx';
 import Header from '../components/Header.jsx'
    
 
@@ -82,7 +82,7 @@ function ProductList({ onHomeClick }) {
         
         
         // setIncart(true);
-        dispatch(addtocart(plant));
+        dispatch(addItem(plant));
         
     };
     return (
