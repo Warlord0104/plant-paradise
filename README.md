@@ -1,4 +1,4 @@
-# 🌿 Plant Shop - React Plant Shopping Website
+# 🌿 E-plantShopping- React Plant Shopping Website
 
 A modern and responsive plant shopping website built using React.js.  
 This project allows users to browse plants, view details, add items to the cart, and enjoy a clean shopping experience.

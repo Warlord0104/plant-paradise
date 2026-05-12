@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import Header from "./components/Header";
+import Header from "./components/NavBar";
 import Landing from "./components/Landing";
 import ProductList from "./pages/ProductList";
 import CartItem from "./pages/CartItem";
+import "./App.css";
 
 
 function App() {

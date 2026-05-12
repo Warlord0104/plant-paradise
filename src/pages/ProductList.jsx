@@ -3,7 +3,7 @@ import './porducts.css';
 import {useDispatch,useSelector } from 'react-redux';
 import plants from '../components/data/plants.js';
 import {addItem} from '../components/cartslice.jsx';
-import Header from '../components/Header.jsx'
+import Header from '../components/NavBar.jsx'
    
 
 

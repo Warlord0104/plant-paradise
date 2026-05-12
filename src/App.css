@@ -1,8 +1,11 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+
+.App{
+  background: url("bg.jpg") center/cover;
+  height: 90vh;
+  color: white;
   text-align: center;
+  padding-top: 200px;
 }
 
 .logo {
@@ -16,6 +19,39 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+h1{
+
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+p{
+    margin: 20px 0;
+    font-size: 1.1rem;
+    margin: 0 20%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:  #006400;
+    backdrop-filter: blur(5px);
+    padding : 30px;
+}
+.landing{
+  background: url("bg.jpg") center/cover;
+  height: 90vh;
+  color: white;
+  text-align: center;
+  padding-top: 200px;
+}
+
+button{
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 @keyframes logo-spin {
